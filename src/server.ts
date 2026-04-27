@@ -10,12 +10,15 @@ import express from 'express';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
-const angularApp = new AngularAppEngine();
+
+const angularAppEngine = new AngularAppEngine({
+  bootstrap: () => import('./main.server').then(m => m.default),
+});
 
 export async function netlifyAppEngineHandler(request: Request): Promise<Response> {
   const context = getContext();
-  const result = await angularApp.handle(request, context);
-  return result || new Response('Not found', { status: 404 });
+  const result = await angularAppEngine.render(request, context);
+  return result.response;
 }
 
 export const reqHandler = createRequestHandler(netlifyAppEngineHandler);
