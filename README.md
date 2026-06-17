@@ -1,59 +1,69 @@
-# PokemonSsr
+# PokéAPI Pro — Angular 21 & SSR Explorer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Una aplicación web moderna, rápida y optimizada para el universo Pokémon, construida sobre las últimas características estables de **Angular** y diseñada con una interfaz futurista minimalista (*Glassmorphism*) utilizando **Tailwind CSS**.
 
-## Development server
+Este proyecto fue desarrollado inicialmente como parte del curso "Angular Pro" de Fernando Herrera y posteriormente rediseñado, optimizado y refinado visual y conceptualmente de manera independiente para formar parte de mi portafolio profesional.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Características Clave & Valor Técnico
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Renderizado en el Servidor (SSR):** Implementación de Server-Side Rendering para una carga inicial ultra rápida, optimización drástica de rendimiento y arquitectura preparada para indexación SEO.
+* **Reactividad Moderna con Signals:** Gestión eficiente del estado global de la aplicación y flujos de datos asíncronos aprovechando la potencia de los Angular Signals nativos.
+* **Control Flow Nativo & Estado Avanzado:** Uso exclusivo de las últimas directivas de Angular 21 para una sintaxis de plantillas limpia, óptima y de alto rendimiento.
+* **Estilo Premium Glassmorphism:** Interfaz de usuario diseñada con Tailwind CSS emulando un panel translúcido de alta tecnología, adaptada completamente al español con un diseño cohesivo y responsivo.
+* **Integración de Medios Dinámicos:** Consumo asíncrono desde la API pública para inyectar recursos multimedia dinámicos, incluyendo renders oficiales en alta resolución y el espectro de audio nativo de los gritos (*cries*) de cada espécimen.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Stack Tecnológico
 
-```bash
-ng generate component component-name
-```
+* **Framework:** Angular 21 (TypeScript estrictamente tipado)
+* **Estilos:** Tailwind CSS 
+* **Gestión de Estado:** Angular Signals & Control Flow
+* **Arquitectura:** SSR (Server-Side Rendering)
+* **Fuente de Datos:** PokéAPI (RESTful API externa)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
 
-## Building
+## 🧪 Pruebas Unitarias (Testing)
 
-To build the project run:
+Para garantizar la estabilidad de la aplicación, el correcto flujo de las señales (*Signals*) y la integridad de los servicios ante cambios en los datos, el proyecto cuenta con una suite de pruebas unitarias automatizadas.
 
-```bash
-ng build
-```
+* **Test Runner:** [Vitest](https://vitest.dev/) (Entorno de ejecución de alto rendimiento y baja latencia).
+* **Enfoque:** Validación del ciclo de vida de los componentes, reactividad en el renderizado de tarjetas dinámicas y transporte de datos asíncronos.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Para ejecutar la suite de pruebas locales con Vitest, ejecuta el siguiente comando:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📦 Instalación y Despliegue Local
 
-For end-to-end (e2e) testing, run:
+Sigue estos pasos para clonar el repositorio y ejecutar el entorno de desarrollo local:
 
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/Danielisa/pokemon-ssr.git](https://github.com/Danielisosa/pokemon-ssr.git)
+   cd pokemon-ssr
+
+2. **Instalar dependencias:**
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+3. **Iniciar el servidor de desarrollo (con soporte SSR):**
+```bash
+npm run dev
+```
 
-## Additional Resources
+Abre http://localhost:4200 en tu navegador para ver el resultado.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## 🌐Despliegue
+El proyecto se encuentra desplegado y en vivo en el siguiente enlace:
+
+[![Deploy con Netlify](https://img.shields.io/badge/Netlify-Live_Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://pokemons-ssr-dash.netlify.app/)
+

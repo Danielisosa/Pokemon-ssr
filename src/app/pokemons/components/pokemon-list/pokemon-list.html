@@ -1,15 +1,25 @@
-<div class="grid gap-3 grid-col-1 sm:grid-cols-3 md:grid-cols-5">
-  <!-- <h3 class="text-xl font-bold mb-2">Lista de Pokemons</h3>
-  <p>Contenido de la lista de pokemons</p> -->
-
-  @for(pokemon of pokemons();  track pokemon.id) {
-    <pokemon-card [pokemon]="pokemon"/>
-  }@empty {
-    <div class="col-span-5 text-center border-white h-28 flex justify-center items-center">
-    No hay pokemons para mostrar
+<div class="relative max-w-md mx-auto my-8 px-4">
+  <div class="absolute inset-y-0 start-0 flex items-center ps-8 pointer-events-none text-slate-400">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
   </div>
+  <input type="text"
+         class="w-full ps-11 pe-4 py-3 text-sm bg-slate-900/40 backdrop-blur-md border border-slate-800 focus:border-cyan-500/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500/20 text-white transition-all placeholder-slate-500"
+         placeholder="Buscar Pokémon por nombre o ID...">
+</div>
+
+<div class="grid gap-4 grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-7xl mx-auto px-4 pb-12">
+
+  @for(pokemon of pokemons(); track pokemon.id) {
+    <pokemon-card [pokemon]="pokemon"/>
+  } @empty {
+    <div class="col-span-full text-center bg-slate-900/20 backdrop-blur-sm border border-dashed border-slate-800 rounded-2xl h-40 flex flex-col justify-center items-center gap-2 p-6">
+      <svg class="w-8 h-8 text-slate-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="text-sm font-medium text-slate-500">No se encontraron Pokémons en los registros.</p>
+    </div>
   }
-
-
 
 </div>
