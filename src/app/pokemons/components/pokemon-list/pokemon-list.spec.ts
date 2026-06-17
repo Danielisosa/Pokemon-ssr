@@ -40,8 +40,8 @@ describe(' PokemonList', () => {
     fixture.componentRef.setInput('pokemons', []);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const emptyMessage = compiled.querySelector('.col-span-5.text-center');
+    const emptyMessage = compiled.querySelector('.col-span-full');
     expect(emptyMessage).toBeTruthy();
-    expect(emptyMessage?.textContent?.trim()).toBe('No hay pokemons para mostrar');
+    expect(emptyMessage?.textContent?.trim()).toBe('No se encontraron Pokémons en los registros.');
   });
 });
