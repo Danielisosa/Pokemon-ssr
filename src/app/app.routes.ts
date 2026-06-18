@@ -29,11 +29,8 @@ export const routes: Routes =
 
   },
   {
-    path: '**',
-    redirectTo: ()=> {
-      // const authService = inject(AuthService);
-      return '/pokemons/page/1';
-    },
+   path: '**',
+    redirectTo: 'about'
   }
 
 ];
