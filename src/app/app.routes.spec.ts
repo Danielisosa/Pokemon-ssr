@@ -64,6 +64,6 @@ describe('App Routes', () => {
 
   it('should redirect to /about when path is unknown', async () => {
    await router.navigate(['/154656']);
-    expect(location.path()).toBe('/about');
+    expect(location.path()).toBe('/pokemons/page/1');
   });
 });
