@@ -23,12 +23,11 @@ describe('PokemonCard', () => {
     fixture = TestBed.createComponent(PokemonCard);
     component = fixture.componentInstance;
 
-    fixture.componentRef.setInput('pokemon',{ ...mockPokemon }); // Set the input property with the mock data
-    fixture.detectChanges(); // Trigger change detection to update the component with the new input
+    fixture.componentRef.setInput('pokemon',{ ...mockPokemon });
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    console.log(fixture.nativeElement.innerHTML); // Log the rendered HTML to verify the component's output
     expect(component).toBeTruthy();
   });
 

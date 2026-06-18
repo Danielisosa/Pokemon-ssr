@@ -18,8 +18,6 @@ describe('App Routes', () => {
     });
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
-    // expect(router).toBeTruthy();
-
    });
 
 
@@ -28,7 +26,7 @@ describe('App Routes', () => {
   });
 
   it('should contain all defined routes', () => {
-    expect(routes.length).toBe(6);
+    expect(routes.length).toBe(7);
 
   });
 
@@ -39,9 +37,9 @@ describe('App Routes', () => {
     expect(component.default).toBe(AboutPage);
   });
 
-  it('should navigate to "/about" when path is /about', async () => {
+  it('should navigate to "/pokemons/page/1" when path is /', async () => {
     await router.navigate(['/']);
-    expect(location.path()).toBe('/about');
+    expect(location.path()).toBe('/pokemons/page/1');
 
   });
 
