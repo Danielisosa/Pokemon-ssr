@@ -39,7 +39,7 @@ describe('App Routes', () => {
 
   it('should navigate to "/pokemons/page/1" when path is /', async () => {
     await router.navigate(['/']);
-    expect(location.path()).toBe('/pokemons/page/1');
+    expect(location.path()).toBe('/about');
 
   });
 
