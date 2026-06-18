@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
 import { PokemonList } from "../../pokemons/components/pokemon-list/pokemon-list";
 import { PokemonListSkeleton } from "./ui/pokemon-list-skeleton/pokemon-list-skeleton";
 import { PokemonsService } from '../../pokemons/services/pokemons.service';
@@ -23,10 +23,28 @@ export default class PokemonsPage{
 
   public pokemons = signal<SimplePokemon[]>([]);
 
+  public searchTerm = signal('');
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
   private title= inject(Title)
+
+  public filteredPokemons = computed(() => {
+    const search = this.searchTerm().toLowerCase().trim();
+    const list = this.pokemons(); // Aquí pones tu señal original de pokémons
+
+    if (!search) return list;
+
+    return list.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(search) ||
+      pokemon.id.toString() === search
+    );
+  });
+
+  public onSearchChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.searchTerm.set(input.value);
+  }
 
   public currentPage= toSignal<number>(
     this.route.params.pipe(
