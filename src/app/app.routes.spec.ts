@@ -26,7 +26,7 @@ describe('App Routes', () => {
   });
 
   it('should contain all defined routes', () => {
-    expect(routes.length).toBe(7);
+    expect(routes.length).toBe(6);
 
   });
 
